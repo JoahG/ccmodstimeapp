@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	acts_as_gmappable :check_process => false
 	include Gravtastic
-  	gravtastic
+	gravtastic
 
 	attr_accessible :email, :gmaps, :latitude, :longitude, :name, :url, :location, :time_offset
 
@@ -12,8 +12,9 @@ class User < ActiveRecord::Base
 	validates :time_offset, presence: true
 
 	def gmaps4rails_address
-	  "#{self.location}" 
+		"#{self.location}" 
 	end
+
 	def gmaps4rails_infowindow
 		"<a href='#{self.url}'><img src='#{self.gravatar_url}'></a><br><span class='time' data-offset='#{self.time_offset}'></span><br><a href='#{self.url}'>#{self.name}</a>"
 	end
