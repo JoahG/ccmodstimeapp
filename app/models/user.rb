@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-	acts_as_gmappable
+	acts_as_gmappable, :check_process => false
 	include Gravtastic
-  gravtastic
+  	gravtastic
 
 	attr_accessible :email, :gmaps, :latitude, :longitude, :name, :url, :location, :time_offset
 
