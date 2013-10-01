@@ -14,7 +14,7 @@
 	<%= gmaps4rails(@json) %>
 </div>
 
-<div id="new_user_form_container">
+<div class="container">
 	<h3>Add me!</h3>
 	<%= form_for @new_user do |f| %>
 		<%= f.label :name, "Full Name" %> <%= f.text_field :name %> <br>
@@ -31,11 +31,13 @@
 	<% end %>
 </div>
 
-<ul>
-	<% @users.each do |user| %>
-		<li><%= user.name %> - <%= link_to "Edit", edit_user_path(user) %></li>
-	<% end %>
-</ul>
+<div class="container">
+	<ul>
+		<% @users.each do |user| %>
+			<li><%= user.name %> - <%= link_to "Edit", edit_user_path(user) %></li>
+		<% end %>
+	</ul>
+</div>
 
 <script>
 	var currentTime = new Date();

@@ -62,7 +62,7 @@ span.version {
 	border-radius: 10px;
 }
 
-#new_user_form_container {
+.container {
 	background-color: #08c;
 	width: 320px;
 	padding: 20px;
