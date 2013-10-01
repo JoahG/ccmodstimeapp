@@ -1,0 +1,37 @@
+<h1>
+	What time is it?
+</h1>
+
+<span class="version">
+	v2 - Rails FTW
+</span>
+
+<span class="desc">
+	{{scroll to the bottom to add yourself to the map}}
+</span>
+
+<div id="map_container_two">
+	<%= gmaps4rails(@json) %>
+</div>
+
+<div id="new_user_form_container">
+	<h3>Add me!</h3>
+	<%= form_for @new_user do |f| %>
+		<%= f.label :name, "Full Name" %> <%= f.text_field :name %> <br>
+		<%= f.label :email, "Email (Gravatar)" %> <%= f.text_field :email %> <br>
+		<%= f.label :url, "Codecademy URL" %> <%= f.text_field :url %> <br>
+		<%= f.label :location, "Location (GMaps)" %> <%= f.text_field :location %> <br>
+		<%= f.label :time_offset, "Timezone Offset" %> <%= f.number_field :time_offset, readonly: "readonly" %> <br>
+		<small>
+			Note: the Time Offset is set automatically via Javascript according to your computer's settings. If it appears to be incorrect, please <a href="mailto:joahd@gbergfamily.com">contact me</a>.
+		</small>
+		<p>
+			<%= f.submit "Add me!" %>
+		</p>
+	<% end %>
+</div>
+
+<script>
+	var currentTime = new Date();
+	$("input#user_time_offset").val(currentTime.getTimezoneOffset()/60)
+</script>
