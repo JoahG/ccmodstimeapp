@@ -17,7 +17,7 @@
 var getCurrentTime = function(offset) {
 	var currentTime = new Date();
 	currentTime.setHours(currentTime.getHours()+offset-(currentTime.getTimezoneOffset()/60));
-    return currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds() + " (" + (offset >= 0 ? "+" + offset.toString(): offset.toString()) + ")";
+    return (currentTime.getHours().length > 1 ? currentTime.getHours() : "0" + currentTime.getHours()) + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds() + " (" + (offset >= 0 ? "+" + offset.toString(): offset.toString()) + ")";
 }
 
 var updateClocks = function() {
