@@ -42,5 +42,6 @@
 
 <script>
 	var currentTime = new Date();
-	$("input#user_time_offset").val(currentTime.getTimezoneOffset()/60)
+	h = currentTime.getTimezoneOffset()/60
+	$("input#user_time_offset").val((h < 0 ? abs(h) : parseInt("-"+h,10)))
 </script>
