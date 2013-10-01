@@ -9,3 +9,4 @@ end
 gem 'jquery-rails'
 gem 'gmaps4rails'
 gem 'gravtastic'
+gem 'rails_12factor'
