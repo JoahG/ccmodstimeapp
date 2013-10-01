@@ -16,7 +16,7 @@
 
 var getCurrentTime = function(offset) {
 	var currentTime = new Date();
-	currentTime.setHours(currentTime.getHours()+offset-(currentTime.getTimezoneOffset()/60));
+	currentTime.setHours(currentTime.getHours()+offset);
 	return currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
 }
 
