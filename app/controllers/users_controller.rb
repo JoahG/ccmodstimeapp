@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.gmaps = false
     @user.update_attributes(params[:user])
     redirect_to root_url
   end
