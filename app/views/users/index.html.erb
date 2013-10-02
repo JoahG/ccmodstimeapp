@@ -31,15 +31,6 @@
 	<% end %>
 </div>
 
-<div class="container">
-	<h3>All Users</h3>
-	<ul>
-		<% @users.each do |user| %>
-			<li><%= user.name %> - <%= link_to "Edit", edit_user_path(user) %> | <%= link_to 'Remove', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-		<% end %>
-	</ul>
-</div>
-
 <script>
 	// Use current time and TimezoneOffset to determine current offset
 	var currentTime = new Date();

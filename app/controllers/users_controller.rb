@@ -29,4 +29,8 @@ class UsersController < ApplicationController
 		@user.destroy
 		redirect_to root_url
 	end
+
+	def admin
+		@users = User.all
+	end
 end
