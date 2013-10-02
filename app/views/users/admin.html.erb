@@ -23,3 +23,11 @@
 		</p>
 	<% end %>
 </div>
+
+<script>
+	// Use current time and TimezoneOffset to determine current offset
+	var currentTime = new Date();
+	h = currentTime.getTimezoneOffset()/60
+	// Set time offset input to offset. 
+	$("input#user_time_offset").val((h < 0 ? abs(h) : parseInt("-"+h,10)))
+</script>

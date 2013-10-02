@@ -2,9 +2,7 @@ class UsersController < ApplicationController
 	http_basic_authenticate_with name: "ccmod13", password: "domcc13", except: :index
 
 	def index
-		@users = User.all
 		@json = User.all.to_gmaps4rails
-		@new_user ||= User.new
 	end
 
 	def create
@@ -32,5 +30,6 @@ class UsersController < ApplicationController
 
 	def admin
 		@users = User.all
+		@new_user ||= User.new
 	end
 end
