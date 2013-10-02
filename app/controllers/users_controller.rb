@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	http_basic_authenticate_with name: "ccmod13", password: "domcc13", except: :index
+
 	def index
 		@users = User.all
 		@json = User.all.to_gmaps4rails
